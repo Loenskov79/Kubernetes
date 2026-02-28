@@ -6,6 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
     external-dns.alpha.kubernetes.io/hostname: kafka.loenskov.com
+    traefik.ingress.kubernetes.io/router.middlewares: kafka-kafka-ui-basic-auth@kubernetescrd
 spec:
   ingressClassName: traefik
   tls:

@@ -1,0 +1,8 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: kafka-ui-basic-auth
+  namespace: kafka
+spec:
+  basicAuth:
+    secret: kafka-ui-basic-auth
