@@ -1,0 +1,12 @@
+strimzi-kafka-operator:
+  extraEnvs:
+    - name: STRIMZI_KUBERNETES_VERSION
+      value: "major=1,minor=34"
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 400m
+      memory: 512Mi
