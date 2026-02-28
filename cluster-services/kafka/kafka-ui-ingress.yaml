@@ -3,8 +3,15 @@ kind: Ingress
 metadata:
   name: kafka-ui
   namespace: kafka
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    external-dns.alpha.kubernetes.io/hostname: kafka.loenskov.com
 spec:
   ingressClassName: traefik
+  tls:
+  - hosts:
+    - kafka.loenskov.com
+    secretName: kafka-ui-tls
   rules:
   - host: kafka.loenskov.com
     http:
