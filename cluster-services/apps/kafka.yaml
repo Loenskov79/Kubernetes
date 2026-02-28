@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-services
+  name: kafka
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Loenskov79/Kubernetes.git
     targetRevision: main
-    path: cluster-services/apps
-    directory:
-      recurse: true
+    path: cluster-services/kafka
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: kafka
   syncPolicy:
     automated:
       prune: true
